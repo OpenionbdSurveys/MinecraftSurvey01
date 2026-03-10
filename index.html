@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deadly Purge SMP Survey</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    button { padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #2980b9; }
+    #loader {
+      position: fixed; width: 100%; height: 100%; background: white;
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column; font-size: 24px; z-index: 9999;
+    }
+    #survey { display: none; }
+    .spinner {
+      border: 8px solid #f3f3f3; border-top: 8px solid #3498db;
+      border-radius: 50%; width: 60px; height: 60px;
+      animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading survey… Please wait</p>
+  </div>
+
+  <!-- Survey -->
+  <div id="survey">
+    <h1>Deadly Purge Minecraft SMP Survey</h1>
+    <form id="surveyForm">
+
+      <!-- Section 1: Demographics -->
+      <div class="question">
+        <label>1. What is your age?</label><br>
+        <input type="radio" name="age" value="Under 18"> Under 18<br>
+        <input type="radio" name="age" value="18–24"> 18–24<br>
+        <input type="radio" name="age" value="25–34"> 25–34<br>
+        <input type="radio" name="age" value="35–44"> 35–44<br>
+        <input type="radio" name="age" value="45+"> 45+<br>
+      </div>
+
+      <div class="question">
+        <label>2. What is your gender?</label><br>
+        <input type="radio" name="gender" value="Male"> Male<br>
+        <input type="radio" name="gender" value="Female"> Female<br>
+        <input type="radio" name="gender" value="Non-binary"> Non-binary<br>
+        <input type="radio" name="gender" value="Prefer not to say"> Prefer not to say<br>
+      </div>
+
+      <div class="question">
+        <label>3. Which country do you live in?</label><br>
+        <input type="radio" name="country" value="United States"> United States<br>
+        <input type="radio" name="country" value="Bangladesh"> Bangladesh<br>
+      </div>
+
+      <div class="question">
+        <label>4. If US: Which state?</label><br>
+        <input type="text" name="state">
+      </div>
+
+      <div class="question">
+        <label>5. If BD: Which division?</label><br>
+        <input type="text" name="division">
+      </div>
+
+      <div class="question">
+        <label>6. Do you live in an urban or rural area?</label><br>
+        <input type="radio" name="area" value="Urban"> Urban<br>
+        <input type="radio" name="area" value="Rural"> Rural<br>
+      </div>
+
+      <div class="question">
+        <label>7. What is your highest education level?</label><br>
+        <input type="text" name="education">
+      </div>
+
+      <div class="question">
+        <label>8. What is your occupation?</label><br>
+        <input type="text" name="occupation">
+      </div>
+
+      <div class="question">
+        <label>9. What is your monthly household income?</label><br>
+        <input type="text" name="income">
+      </div>
+
+      <div class="question">
+        <label>10. What device do you primarily use for gaming?</label><br>
+        <input type="radio" name="device" value="PC"> PC<br>
+        <input type="radio" name="device" value="Laptop"> Laptop<br>
+        <input type="radio" name="device" value="Console"> Console<br>
+        <input type="radio" name="device" value="Mobile"> Mobile<br>
+      </div>
+
+      <button type="submit">Submit Survey</button>
+    </form>
+  </div>
+
+  <script>
+    // Show loader for 20 seconds, then reveal survey
+    setTimeout(function() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("survey").style.display = "block";
+    }, 20000);
+
+    // Handle survey submission
+    document.getElementById("surveyForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Survey completed! Your responses have been deleted.");
+      // Reload page after submission
+      location.reload();
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deadly Purge SMP Survey</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    button { padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #2980b9; }
+    #loader {
+      position: fixed; width: 100%; height: 100%; background: white;
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column; font-size: 24px; z-index: 9999;
+    }
+    #survey { display: none; }
+    .spinner {
+      border: 8px solid #f3f3f3; border-top: 8px solid #3498db;
+      border-radius: 50%; width: 60px; height: 60px;
+      animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading survey… Please wait</p>
+  </div>
+
+  <!-- Survey -->
+  <div id="survey">
+    <h1>Deadly Purge Minecraft SMP Survey</h1>
+    <form id="surveyForm">
+
+      <!-- Section 2: Qualification Screening -->
+      <div class="question">
+        <label>11. Do you actively play Minecraft SMP servers?</label><br>
+        <input type="radio" name="playSMP" value="Yes"> Yes<br>
+        <input type="radio" name="playSMP" value="No"> No<br>
+      </div>
+
+      <div class="question">
+        <label>12. Have you ever participated in purge-style events in Minecraft?</label><br>
+        <input type="radio" name="purgeEvents" value="Yes"> Yes<br>
+        <input type="radio" name="purgeEvents" value="No"> No<br>
+      </div>
+
+      <div class="question">
+        <label>13. Are you familiar with community rules and plugins used in SMP servers?</label><br>
+        <input type="radio" name="rulesPlugins" value="Yes"> Yes<br>
+        <input type="radio" name="rulesPlugins" value="No"> No<br>
+      </div>
+
+      <!-- Section 3: Deadly Purge SMP Gameplay -->
+      <div class="question">
+        <label>14. I enjoy survival-based SMP gameplay.</label><br>
+        <input type="radio" name="q14" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q14" value="Agree"> Agree<br>
+        <input type="radio" name="q14" value="Neutral"> Neutral<br>
+        <input type="radio" name="q14" value="Disagree"> Disagree<br>
+        <input type="radio" name="q14" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>15. I prefer SMP servers with purge events.</label><br>
+        <input type="radio" name="q15" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q15" value="Agree"> Agree<br>
+        <input type="radio" name="q15" value="Neutral"> Neutral<br>
+        <input type="radio" name="q15" value="Disagree"> Disagree<br>
+        <input type="radio" name="q15" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>16. I believe purge events make SMP more exciting.</label><br>
+        <input type="radio" name="q16" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q16" value="Agree"> Agree<br>
+        <input type="radio" name="q16" value="Neutral"> Neutral<br>
+        <input type="radio" name="q16" value="Disagree"> Disagree<br>
+        <input type="radio" name="q16" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>17. I enjoy PvP combat during purge events.</label><br>
+        <input type="radio" name="q17" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q17" value="Agree"> Agree<br>
+        <input type="radio" name="q17" value="Neutral"> Neutral<br>
+        <input type="radio" name="q17" value="Disagree"> Disagree<br>
+        <input type="radio" name="q17" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>18. I prefer SMP servers with strict rules.</label><br>
+        <input type="radio" name="q18" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q18" value="Agree"> Agree<br>
+        <input type="radio" name="q18" value="Neutral"> Neutral<br>
+        <input type="radio" name="q18" value="Disagree"> Disagree<br>
+        <input type="radio" name="q18" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>19. I prefer SMP servers with relaxed rules.</label><br>
+        <input type="radio" name="q19" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q19" value="Agree"> Agree<br>
+        <input type="radio" name="q19" value="Neutral"> Neutral<br>
+        <input type="radio" name="q19" value="Disagree"> Disagree<br>
+        <input type="radio" name="q19" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>20. I enjoy roleplay elements in SMP.</label><br>
+        <input type="radio" name="q20" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q20" value="Agree"> Agree<br>
+        <input type="radio" name="q20" value="Neutral"> Neutral<br>
+        <input type="radio" name="q20" value="Disagree"> Disagree<br>
+        <input type="radio" name="q20" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <button type="submit">Submit Survey</button>
+    </form>
+  </div>
+
+  <script>
+    // Show loader for 20 seconds, then reveal survey
+    setTimeout(function() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("survey").style.display = "block";
+    }, 20000);
+
+    // Handle survey submission
+    document.getElementById("surveyForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Survey completed! Your responses have been deleted.");
+      // Reload page after submission
+      location.reload();
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deadly Purge SMP Survey</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    button { padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #2980b9; }
+    #loader {
+      position: fixed; width: 100%; height: 100%; background: white;
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column; font-size: 24px; z-index: 9999;
+    }
+    #survey { display: none; }
+    .spinner {
+      border: 8px solid #f3f3f3; border-top: 8px solid #3498db;
+      border-radius: 50%; width: 60px; height: 60px;
+      animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading survey… Please wait</p>
+  </div>
+
+  <!-- Survey -->
+  <div id="survey">
+    <h1>Deadly Purge Minecraft SMP Survey</h1>
+    <form id="surveyForm">
+
+      <!-- Section 3 continued: Deadly Purge SMP Gameplay -->
+      <div class="question">
+        <label>21. I enjoy competitive elements in SMP.</label><br>
+        <input type="radio" name="q21" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q21" value="Agree"> Agree<br>
+        <input type="radio" name="q21" value="Neutral"> Neutral<br>
+        <input type="radio" name="q21" value="Disagree"> Disagree<br>
+        <input type="radio" name="q21" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>22. I prefer SMP servers with economy plugins.</label><br>
+        <input type="radio" name="q22" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q22" value="Agree"> Agree<br>
+        <input type="radio" name="q22" value="Neutral"> Neutral<br>
+        <input type="radio" name="q22" value="Disagree"> Disagree<br>
+        <input type="radio" name="q22" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>23. I prefer SMP servers with land-claim plugins.</label><br>
+        <input type="radio" name="q23" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q23" value="Agree"> Agree<br>
+        <input type="radio" name="q23" value="Neutral"> Neutral<br>
+        <input type="radio" name="q23" value="Disagree"> Disagree<br>
+        <input type="radio" name="q23" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>24. I prefer SMP servers with teleportation plugins.</label><br>
+        <input type="radio" name="q24" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q24" value="Agree"> Agree<br>
+        <input type="radio" name="q24" value="Neutral"> Neutral<br>
+        <input type="radio" name="q24" value="Disagree"> Disagree<br>
+        <input type="radio" name="q24" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>25. I prefer SMP servers with custom events.</label><br>
+        <input type="radio" name="q25" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q25" value="Agree"> Agree<br>
+        <input type="radio" name="q25" value="Neutral"> Neutral<br>
+        <input type="radio" name="q25" value="Disagree"> Disagree<br>
+        <input type="radio" name="q25" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>26. I prefer SMP servers with vanilla gameplay.</label><br>
+        <input type="radio" name="q26" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q26" value="Agree"> Agree<br>
+        <input type="radio" name="q26" value="Neutral"> Neutral<br>
+        <input type="radio" name="q26" value="Disagree"> Disagree<br>
+        <input type="radio" name="q26" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>27. I enjoy building bases in SMP.</label><br>
+        <input type="radio" name="q27" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q27" value="Agree"> Agree<br>
+        <input type="radio" name="q27" value="Neutral"> Neutral<br>
+        <input type="radio" name="q27" value="Disagree"> Disagree<br>
+        <input type="radio" name="q27" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>28. I enjoy raiding bases during purge events.</label><br>
+        <input type="radio" name="q28" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q28" value="Agree"> Agree<br>
+        <input type="radio" name="q28" value="Neutral"> Neutral<br>
+        <input type="radio" name="q28" value="Disagree"> Disagree<br>
+        <input type="radio" name="q28" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>29. I enjoy forming alliances in SMP.</label><br>
+        <input type="radio" name="q29" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q29" value="Agree"> Agree<br>
+        <input type="radio" name="q29" value="Neutral"> Neutral<br>
+        <input type="radio" name="q29" value="Disagree"> Disagree<br>
+        <input type="radio" name="q29" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <div class="question">
+        <label>30. I enjoy betraying alliances during purge events.</label><br>
+        <input type="radio" name="q30" value="Strongly Agree"> Strongly Agree<br>
+        <input type="radio" name="q30" value="Agree"> Agree<br>
+        <input type="radio" name="q30" value="Neutral"> Neutral<br>
+        <input type="radio" name="q30" value="Disagree"> Disagree<br>
+        <input type="radio" name="q30" value="Strongly Disagree"> Strongly Disagree<br>
+      </div>
+
+      <button type="submit">Submit Survey</button>
+    </form>
+  </div>
+
+  <script>
+    // Show loader for 20 seconds, then reveal survey
+    setTimeout(function() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("survey").style.display = "block";
+    }, 20000);
+
+    // Handle survey submission
+    document.getElementById("surveyForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Survey completed! Your responses have been deleted.");
+      // Reload page after submission
+      location.reload();
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deadly Purge SMP Survey</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    button { padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #2980b9; }
+    #loader {
+      position: fixed; width: 100%; height: 100%; background: white;
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column; font-size: 24px; z-index: 9999;
+    }
+    #survey { display: none; }
+    .spinner {
+      border: 8px solid #f3f3f3; border-top: 8px solid #3498db;
+      border-radius: 50%; width: 60px; height: 60px;
+      animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading survey… Please wait</p>
+  </div>
+
+  <!-- Survey -->
+  <div id="survey">
+    <h1>Deadly Purge Minecraft SMP Survey</h1>
+    <form id="surveyForm">
+
+      <!-- Example: Previous questions go here (1–30 etc.) -->
+
+      <!-- Final Demographics Section -->
+      <div class="question">
+        <label>94. How many people live in your household?</label><br>
+        <input type="number" name="household" min="1">
+      </div>
+
+      <div class="question">
+        <label>95. Do you live in an urban or rural area?</label><br>
+        <input type="radio" name="areaFinal" value="Urban"> Urban<br>
+        <input type="radio" name="areaFinal" value="Rural"> Rural<br>
+      </div>
+
+      <div class="question">
+        <label>96. What language do you speak at home?</label><br>
+        <input type="text" name="language">
+      </div>
+
+      <div class="question">
+        <label>97. How often do you play Minecraft per week?</label><br>
+        <input type="text" name="playFrequency">
+      </div>
+
+      <div class="question">
+        <label>98. How often do you watch Minecraft content online?</label><br>
+        <input type="text" name="watchFrequency">
+      </div>
+
+      <div class="question">
+        <label>99. Do cultural traditions influence your gaming choices?</label><br>
+        <input type="radio" name="cultureInfluence" value="Yes"> Yes<br>
+        <input type="radio" name="cultureInfluence" value="No"> No<br>
+      </div>
+
+      <div class="question">
+        <label>100. Would you participate in future SMP surveys 
+          <script>
+    // Show loader for 20 seconds, then reveal survey
+    setTimeout(function() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("survey").style.display = "block";
+    }, 20000);
+
+    // Handle survey submission
+    document.getElementById("surveyForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Survey completed! Your responses have been deleted.");
+      // Reload page after submission
+      location.reload();
+    });
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deadly Purge SMP Survey</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    button { padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #2980b9; }
+    #loader {
+      position: fixed; width: 100%; height: 100%; background: white;
+      display: flex; justify-content: center; align-items: center;
+      flex-direction: column; font-size: 24px; z-index: 9999;
+    }
+    #survey { display: none; }
+    .spinner {
+      border: 8px solid #f3f3f3; border-top: 8px solid #3498db;
+      border-radius: 50%; width: 60px; height: 60px;
+      animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading survey… Please wait</p>
+  </div>
+
+  <!-- Survey -->
+  <div id="survey">
+    <h1>Deadly Purge Minecraft SMP Survey</h1>
+    <form id="surveyForm">
+
+      <!-- Example questions (expand with all 100) -->
+      <div class="question">
+        <label>1. What is your age?</label><br>
+        <input type="radio" name="age" value="Under 18"> Under 18<br>
+        <input type="radio" name="age" value="18–24"> 18–24<br>
+        <input type="radio" name="age" value="25–34"> 25–34<br>
+        <input type="radio" name="age" value="35–44"> 35–44<br>
+        <input type="radio" name="age" value="45+"> 45+<br>
+      </div>
+
+      <!-- Continue adding all questions up to 100 -->
+
+      <button type="submit">Submit Survey</button>
+    </form>
+  </div>
+
+  <script>
+    // Show loader for 20 seconds, then reveal survey
+    setTimeout(function() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("survey").style.display = "block";
+    }, 20000);
+
+    // Handle survey submission
+    document.getElementById("surveyForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Survey completed! Your responses have been deleted.");
+      // Redirect to external Google Form after completion
+      window.location.href = "https://forms.gle/JVNrvBMn4d35uyDS9";
+    });
+  </script>
+</body>
+</html>
